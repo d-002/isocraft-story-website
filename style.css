@@ -1,0 +1,110 @@
+@font-face {
+	font-family: "times";
+	src: url("fonts/times new roman.ttf");
+}
+
+@font-face {
+	font-family: "black";
+	src: url("fonts/Rounds Black.otf");
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: #2a2834;
+	color: #ffedcc;
+}
+
+body {
+	position: absolute;
+	z-index: -2;
+}
+
+#title {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+
+	width: var(--W);
+	height: var(--H);
+}
+
+#slide {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+#left, #right {
+	width: 100%;
+	flex-shrink: 0;
+}
+
+#slide img {
+	width: 100%;
+}
+
+#slide-cover {
+	position: relative;
+	width: calc(100% + 100px);
+	height: 300px;
+	top: 0;
+	left: 0;
+	transform: translate(-50px, calc(-50px - 100%));
+
+	background-image: linear-gradient(rgba(0, 0, 0, 0), #2a2834);
+}
+
+#bank {
+	display: none;
+}
+
+h1, h2 {
+	margin: 0;
+
+	text-align: center;
+	font-weight: 100;
+}
+
+h1 {
+	font-family: "black";
+	font-size: 100px;
+
+	filter: drop-shadow(0 0 20px black);
+}
+
+h2 {
+	font-family: "times";
+	font-size: 40px;
+
+	filter: drop-shadow(0 0 5px black);
+}
+
+h3 {
+	margin: -300px 0 100px 0;
+
+	font-family: "times";
+	font-size: 30px;
+	text-align: center;
+}
+
+#main {
+	position: absolute;
+
+	width: calc(100% - 100px);
+	min-height: var(--H);
+	padding: 50px;
+
+	background-color: #2a2834;
+}

@@ -8,6 +8,11 @@
 	src: url("fonts/Rounds Black.otf");
 }
 
+@font-face {
+	font-family: "fredoka";
+	src: url("fonts/FredokaOne-Regular.ttf");
+}
+
 html, body {
 	margin: 0;
 	padding: 0;
@@ -57,11 +62,11 @@ body {
 
 #slide-cover {
 	position: relative;
-	width: calc(100% + 100px);
+	width: var(--W);
 	height: 300px;
 	top: 0;
 	left: 0;
-	transform: translate(-50px, calc(-50px - 100%));
+	transform: translate(calc(0px - var(--margin)), calc(-50px - 100%));
 
 	background-image: linear-gradient(rgba(0, 0, 0, 0), #2a2834);
 }
@@ -92,19 +97,42 @@ h2 {
 }
 
 h3 {
-	margin: -300px 0 100px 0;
+	margin: -250px 0 100px 0;
 
-	font-family: "times";
-	font-size: 30px;
+	font-family: "black";
+	font-size: 40px;
 	text-align: center;
 }
 
 #main {
 	position: absolute;
 
-	width: calc(100% - 100px);
+	width: calc(100% - calc(var(--margin) * 2));
 	min-height: var(--H);
-	padding: 50px;
+	padding: 50px var(--margin);
 
 	background-color: #2a2834;
+}
+
+#main>div.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	gap: 100px;
+	margin-bottom: 50px;
+}
+
+p {
+	font-family: "fredoka";
+	font-size: 24px;
+}
+
+p.right {
+	text-align: right;
+}
+
+#main>div.flex>img {
+	height: 400px;
+	flex-shrink: 0;
 }

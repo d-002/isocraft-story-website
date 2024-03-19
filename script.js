@@ -38,6 +38,7 @@ function fadein() {
 	if (t >= 1) {
 		// stop animation, start slides
 		window.clearInterval(interval);
+		start -= 2000;
 		interval = window.setInterval(update, 1000/fps);
 	} else {
 		left.children[0].style = "filter: opacity("+smoothstep(t)+");";
@@ -68,7 +69,7 @@ function update() {
 function init() {
 	W = window.innerWidth - getScrollbarWidth();
 	H = window.innerHeight;
-	document.body.style = "--W: "+W+"; --H: "+H;
+	document.body.style = "--W: "+W+"px; --H: "+H+"px; --margin: "+parseInt(W*0.2)+"px";
 
 	left = document.getElementById("left");
 	right = document.getElementById("right");

@@ -83,20 +83,22 @@ h1, h2 {
 }
 
 h1 {
+	filter: drop-shadow(0 0 20px black);
+
 	font-family: "black";
 	font-size: 100px;
-
-	filter: drop-shadow(0 0 20px black);
 }
 
 h2 {
+	filter: drop-shadow(0 0 5px black);
+
 	font-family: "times";
 	font-size: 40px;
-
-	filter: drop-shadow(0 0 5px black);
 }
 
 #menu {
+	filter: drop-shadow(0 0 5px black);
+
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -124,7 +126,7 @@ h2 {
 	bottom: 0;
 	transform: translateX(-50%);
 
-	transition: 0.3s width ease-out;
+	transition: 0.25s width ease-out;
 	content: "";
 	border-bottom: 2px solid white;
 	width: 20%;
@@ -148,15 +150,30 @@ h2 {
 	background-color: #2a2834;
 }
 
-h3 {
-	margin: -250px 0 100px 0;
+.lighter {
+	width: calc(100% + calc(var(--margin) * 2));
+	margin: 70px 0;
+	padding: 80px 0;
+	transform: translateX(calc(0px - var(--margin)));
 
+	background-color: #3a3748;
+}
+
+h3, h4 {
 	font-family: "black";
 	font-size: 40px;
 	text-align: center;
 }
 
-#main>div.flex {
+h3 {
+	margin: -250px 0 100px 0;
+}
+
+h4 {
+	margin: 0;
+}
+
+#main div.flex {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -174,7 +191,7 @@ p.right {
 	text-align: right;
 }
 
-#main>div.flex>img {
+#main div.flex>img {
 	height: 400px;
 	flex-shrink: 0;
 
@@ -188,9 +205,9 @@ div.line {
 }
 
 a.button {
-	transition: 0.15s box-shadow ease-out, 0.07s background-color linear;
+	transition: 0.15s border-radius ease-out, 0.07s background-color linear;
 
-	margin: 70px;
+	margin-top: 70px;
 	padding: 15px 50px;
 
 	border-radius: 30px;
@@ -204,6 +221,10 @@ a.button {
 }
 
 a.button:hover {
-	box-shadow: 0 0 20px #696482;
+	border-radius: 20px;
 	background-color: #e3e2e9;
+}
+
+#margin {
+	height: 150px;
 }

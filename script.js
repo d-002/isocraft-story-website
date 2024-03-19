@@ -66,10 +66,15 @@ function update() {
 	}
 }
 
-function init() {
+function updateSize() {
 	W = window.innerWidth - getScrollbarWidth();
 	H = window.innerHeight;
 	document.body.style = "--W: "+W+"px; --H: "+H+"px; --margin: "+parseInt(W*0.2)+"px";
+}
+
+function init() {
+	updateSize();
+	window.addEventListener("resize", updateSize);
 
 	left = document.getElementById("left");
 	right = document.getElementById("right");

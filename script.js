@@ -6,7 +6,7 @@ let fps = 60;
 let interval;
 let currentId = 0;
 let start;
-let delay0 = 2000, delay1 = 4000;
+let delay0 = 2000, delay1 = 5000;
 let left, right;
 
 // from SO/q/13382516
@@ -38,7 +38,6 @@ function fadein() {
 	if (t >= 1) {
 		// stop animation, start slides
 		window.clearInterval(interval);
-		start = Date.now()-1000;
 		interval = window.setInterval(update, 1000/fps);
 	} else {
 		left.children[0].style = "filter: opacity("+smoothstep(t)+");";
@@ -52,7 +51,7 @@ function update() {
 	if (t >= delay1) {
 		// switch to next image
 		start = Date.now();
-		right.innerHTML = '<img src="'+images[currentId++%images.length].src+'">';
+		right.innerHTML = '<img src="'+images[++currentId%images.length].src+'">';
 	}
 	else if (t < 1000) {
 		t = -smoothstep(t/1000)*W;
@@ -77,7 +76,6 @@ function init() {
 
 	// init slides and start fadein animation
 	left.innerHTML = '<img src="'+images[0].src+'" style="display: none">';
-	right.innerHTML = left.innerHTML;
 	start = Date.now();
 	interval = window.setInterval(fadein, 1000/fps);
 }

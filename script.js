@@ -6,7 +6,7 @@ let fps = 60;
 let interval;
 let currentId = 0;
 let start;
-let delay0 = 500, delay1 = 3000;
+let delay0 = 2000, delay1 = 4000;
 let left, right;
 
 // from SO/q/13382516
@@ -41,7 +41,7 @@ function fadein() {
 		start = Date.now()-1000;
 		interval = window.setInterval(update, 1000/fps);
 	} else {
-		left.children[0].style = "transform: opacity(" + (1-smoothstep(t)) + ")";
+		left.children[0].style = "filter: opacity("+smoothstep(t)+");";
 	}
 }
 
@@ -59,10 +59,10 @@ function update() {
 		left.children[0].style = "transform: translateX(" + t + "px)";
 		right.children[0].style = "transform: translateX(" + t + "px)";
 	}
-	else {
+	else if (right.innerHTML != "") {
 		left.innerHTML = right.innerHTML;
-		right.innerHTML = "";
 		left.children[0].style = "";
+		right.innerHTML = "";
 	}
 }
 
@@ -76,7 +76,8 @@ function init() {
 	images = document.getElementById("bank").children;
 
 	// init slides and start fadein animation
-	left.innerHTML = '<img src="'+images[0].src+'">';
+	left.innerHTML = '<img src="'+images[0].src+'" style="display: none">';
+	right.innerHTML = left.innerHTML;
 	start = Date.now();
 	interval = window.setInterval(fadein, 1000/fps);
 }

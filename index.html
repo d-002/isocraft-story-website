@@ -1,11 +1,12 @@
 <html>
 	<head>
 		<title>IsoCraft Story</title>
-		<script src="script.js?v=0.2.1"></script>
-		<link rel="stylesheet" href="style.css?v=0.2.1">
+		<script src="script.js?v=B0.1"></script>
+		<script src="slide.js?v=B0.1"></script>
+		<link rel="stylesheet" href="style.css?v=B0.1">
 	</head>
 	
-	<body onload="javascript:init()">
+	<body onload="javascript:init();initSlide()">
 		<div id="title">
 			<h1>IsoCraft Story</h1>
 			<h2>Work in progress</h2>
@@ -21,36 +22,37 @@
 			</div>
 		</div>
 		<div id="menu">
-			<a href="download">Download</a>
-			<a href="about">About us</a>
+			<a href="javascript:scrollTo('download')">Download</a>
+			<a href="about">About</a>
 		</div>
 		<div id="main">
 			<div id="slide-cover"></div>
 			<h3>Embark on a new adventure.</h3>
 			<div class="flex">
-				<img src="images/oakboka.png">
+				<div><img src="images/oakboka.png"></div>
 				<p>Unveil the secret truth about an extinct alien race.<br><br>Exploration is key in understanding the mysterious world you landed on.</p>
 			</div>
 			<div class="line"></div>
 			<div class="flex">
 				<p class="right">Discover a unique, procedurally-generated environment.<br><br>Explore the many biomes and challenges of 6429-B.</p>
-				<img src="images/surface.png">
+				<div><img src="images/surface.png"></div>
 			</div>
 			<div class="line"></div>
 			<div class="flex">
-				<img src="images/isofight.png">
+				<div><img src="images/isofight.png"></div>
 				<p>An intricate isometric projection, bringing many new opportunities.<br><br>Familiarize yourself with a unique and intuitive camera and combat system.</p>
 			</div>
 			<div class="line"></div>
 			<div class="flex">
 				<p class="right">Stunning cutscenes and soundtrack, for extra immersion.<br><br>Our team worked hard to bring you the best possible experience.</p>
-				<img src="images/cutscene.png">
+				<div><img src="images/cutscene.png"></div>
 			</div>
 
 			<div class="lighter">
 				<h4>Download now</h4>
 				<div class="flex">
-					<a href="download" class="button">Windows build</a>
+					<a href="documents/lightweight.zip" id="download" class="button disabled">Lightweight</a>
+					<a href="documents/full.zip" id="download" class="button disabled">Windows build</a>
 					<a href="https://github.com/RaphoufouLeFou/Isocraft_Story" class="button">Source code</a>
 				</div>
 			</div>

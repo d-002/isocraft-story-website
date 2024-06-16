@@ -182,7 +182,7 @@ h4 {
 	gap: 60px;
 }
 
-p {
+p, a {
 	color: #c7c5d3;
 	font-family: "fredoka";
 	font-size: 24px;
@@ -207,7 +207,7 @@ p.right, p.right strong {
 	display: flex;
 	justify-content: center;
 
-	max-width: -webkit-fill-available;
+	max-width: 65%;
 	flex-shrink: 0;
 	overflow: hidden;
 
@@ -290,4 +290,13 @@ a.button.disabled {
 
 #margin {
 	height: 150px;
+}
+
+a {
+	color: #ffedcc;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }

@@ -26,6 +26,12 @@ function updateSize() {
 	document.body.style = "--W: "+W+"px; --H: "+H+"px; --margin: "+parseInt(W*0.2)+"px";
 }
 
+function closePopup() {
+	let popup = document.getElementById("popup");
+	popup.className = "hide";
+	window.setTimeout(() => popup.remove(), 1000);
+}
+
 function init() {
 	updateSize();
 	window.addEventListener("resize", updateSize);

@@ -1,9 +1,9 @@
 <html>
 	<head>
 		<title>IsoCraft Story</title>
-		<script src="script.js?v=1.1"></script>
-		<script src="slide.js?v=1.1"></script>
-		<link rel="stylesheet" href="style.css?v=1.1">
+		<script src="script.js?v=1.1.1"></script>
+		<script src="slide.js?v=1.1.1"></script>
+		<link rel="stylesheet" href="style.css?v=1.1.1">
 	</head>
 
 	<body onload="javascript:init();initSlide()">
@@ -27,6 +27,17 @@
 			<a href="javascript:scrollTo('download')">Download</a>
 			<a href="about">More info</a>
 			<a href="team">Our team</a>
+		</div>
+		<div id="popup">
+			<div>
+				<h4>This is not the Isocraft Story download site</h4>
+				<p>This website was originally intended for the first few stages of this project, if you want to download the game you should instead visit the Steam page:</p>
+
+				<div class="flex">
+					<a href="https://store.steampowered.com/app/3097480/IsoCraft_Story/" class="button">Steam page</a>
+					<a href="javascript:closePopup()" class="button">Close</a>
+				</div>
+			</div>
 		</div>
 		<div id="main">
 			<div id="slide-cover"></div>
@@ -90,6 +101,7 @@
 		</div>
 	</body>
 </html>
+
 
 
 
